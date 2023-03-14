@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Calculadora</h1>
+    <br><br>
+    <form>
+        <input type="number" placeholder="Insira o primeiro número:" id="num1" type="text"></input>
+        <br>
+        <input type="number" placeholder="Insira o segundo número:" id="num2" type="text"></input>
+        <br>
+    <div>
+        <button type="button" onclick="operacao('+')"> +</button>
+        <button type="button" onclick="operacao('-')"> -</button>
+        <button type="button" onclick="operacao('/')"> /</button>
+        <button type="button" onclick="operacao('*')"> *</button>
+    </div>
+    <br>
+        <input type="number" style="background-color: white;" id="resultado" type="text" disabled></input>
+    </form>
+
+    <script>
+        function operacao(op) {
+            var num1, num2, resultado;
+            num1 = parseFloat(document.getElementById("num1").value);
+            num2 = parseFloat(document.getElementById("num2").value);
+
+            if (op == '+') {
+                resultado = num1 + num2;
+            } else if (op === '-') {
+                resultado = num1 - num2
+            }else if (op === '/') {
+                resultado = num1 / num2
+            } else if (op === '*') {
+                resultado = num1 * num2
+            }
+
+
+            document.getElementById("resultado").value = resultado;
+        }
+    </script>
+
+</body>
+
+</html>
